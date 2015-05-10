@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<meta charset="utf-8">
+  	<title>Weather</title>
+  	<link rel="stylesheet" type="text/css" href="weather.css">
+</head>
+<body>
+	<div class="city">
+		<select id="cities" class="form-control input-lg">
+			<option>臺北市</option>
+			<option>新北市</option>
+			<option>台中市</option>
+			<option>臺南市</option>
+			<option>高雄市</option>
+			<option>基隆市</option>
+			<option>桃園市</option>
+			<option>新竹市</option>
+			<option>新竹縣</option>
+			<option>苗栗縣</option>
+			<option>彰化縣</option>
+			<option>南投縣</option>
+			<option>雲林縣</option>
+			<option>嘉義市</option>
+			<option>嘉義縣</option>
+			<option>屏東縣</option>
+			<option>宜蘭縣</option>
+			<option>花蓮縣</option>
+			<option>台東縣</option>
+			<option>澎湖縣</option>
+			<option>金門縣</option>
+			<option>連江縣</option>
+		</select>
+	</div>
+	<div>
+		<span class="temperature">23</span>&#8451;
+	</div>
+	<div class="icon">
+		<canvas id="today" width="100" height="100"></canvas>
+	    <div class="condition">
+	        <span class="date">4 May 2015</span>: Mostly Cloudy
+	    </div>
+    </div>
+	<div class="content">
+		<table class="table table-bordered">
+       		<tr>
+       			<th colspan="3">Forecast</th>
+       		</tr>
+       		<tr>
+       			<td class="date">day1</td>
+       			<td class="date">day2</td>
+       			<td class="date">day3</td>
+       		</tr>
+       		<tr>
+       			<td>temperature1</td>
+       			<td>temperature2</td>
+       			<td>temperature3</td>
+       		</tr>
+       		<tr>
+       			<td><canvas id="day1" width="64" height="64">Clear</canvas></td>
+                <td><canvas id="day2" width="64" height="64">Mostly Sunny</canvas></td>
+                <td><canvas id="day3" width="64" height="64">Mostly Cloudy</canvas></td>
+       		</tr>
+		</table>
+	</div>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
+	<script src="weather.js"></script>
+</body>
+</html>

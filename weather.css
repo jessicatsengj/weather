@@ -1,0 +1,27 @@
+.city{
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: 1em;
+	display: block;
+	width: 6%;
+}
+th{
+	background: #DDDDDD;
+}
+.content{
+	width: 99%;
+	display: box;
+	margin: auto;
+}
+.date{
+	font-weight: bolder;
+}
+.temperature{
+	margin-left: 20px;
+	font-size: 5em;
+}
+.icon{
+	position: absolute;
+	top: 1em;
+	left: 50%;
+}
