@@ -1,25 +1,3 @@
-var skycons = new Skycons();
-  // on Android, a nasty hack is needed: {"resizeClear": true}
-
-  // you can add a canvas by it's ID...
-  skycons.add("today", Skycons.PARTLY_CLOUDY_DAY);
-  skycons.add("day1", Skycons.CLEAR_DAY);
-  skycons.add("day2", Skycons.CLOUDY);
-  skycons.add("day3", Skycons.RAIN);
-
-  // start animation!
-  skycons.play();
-  
-  // want to change the icon? no problem:
-  skycons.set("today", Skycons.PARTLY_CLOUDY_NIGHT);
-  
-/*
-Get value from Bootstrap dropdown menu
-*/
-$('#dropdown li').on('click', function(){
-    alert($(this).text());
-});
-
 var apiServer = 'https://query.yahooapis.com/v1/public/yql';
 var cities = [ 
   '臺北市',
@@ -71,3 +49,37 @@ citiesContainer.change(function(){
     }
   });
 });
+
+var datesContainer = $('#dates');
+$('.date').css('font-weight', 'bolder').text('day');
+
+var temperaturesContainer = $('#temperatures');
+$('.tp').text('temperature');
+
+// var temperatureOfDay = new TemperatureOfDay();
+
+//   temperatureOfDay.add("tpToday", 23);
+//   temperatureOfDay.add("tp1", temperature);
+//   temperatureOfDay.add("tp2", temperature);
+//   temperatureOfDay.add("tp3", temperature);
+
+var skycons = new Skycons();
+
+  skycons.add("iconToday", Skycons.PARTLY_CLOUDY_DAY);
+  skycons.add("icon1", Skycons.CLEAR_DAY);
+  skycons.add("icon2", Skycons.CLOUDY);
+  skycons.add("icon3", Skycons.RAIN);
+
+  // start animation!
+  skycons.play();
+  
+  // want to change the icon? no problem:
+  skycons.set("iconToday", Skycons.PARTLY_CLOUDY_NIGHT);
+  
+/*
+Get value from Bootstrap dropdown menu
+*/
+$('#dropdown li').on('click', function(){
+    alert($(this).text());
+});
+

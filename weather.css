@@ -13,9 +13,7 @@ th{
 	display: box;
 	margin: auto;
 }
-.date{
-	font-weight: bolder;
-}
+
 .temperature{
 	margin-left: 20px;
 	font-size: 5em;

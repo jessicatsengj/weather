@@ -17,9 +17,9 @@
 		<span class="temperature">23</span>&#8451;
 	</div>
 	<div class="icon">
-		<canvas id="today" width="100" height="100"></canvas>
+		<canvas id="iconToday" width="100" height="100"></canvas>
 	    <div class="condition">
-	        <span class="date">4 May 2015</span>: Mostly Cloudy
+	        <span class="dateToday">4 May 2015</span>: Mostly Cloudy
 	    </div>
     </div>
 	<div class="content">
@@ -27,26 +27,27 @@
        		<tr>
        			<th colspan="3">Forecast</th>
        		</tr>
-       		<tr>
-       			<td class="date">day1</td>
-       			<td class="date">day2</td>
-       			<td class="date">day3</td>
+       		<tr id="dates">
+       			<td class="date"></td>
+       			<td class="date"></td>
+       			<td class="date"></td>
+       		</tr>
+       		<tr id="temperatures">
+       			<td class="tp"></td>
+       			<td class="tp"></td>
+       			<td class="tp"></td>
        		</tr>
        		<tr>
-       			<td>temperature1</td>
-       			<td>temperature2</td>
-       			<td>temperature3</td>
-       		</tr>
-       		<tr>
-       			<td><canvas id="day1" width="64" height="64">Clear</canvas></td>
-                <td><canvas id="day2" width="64" height="64">Mostly Sunny</canvas></td>
-                <td><canvas id="day3" width="64" height="64">Mostly Cloudy</canvas></td>
+       			<td><canvas id="icon1" width="64" height="64"></canvas></td>
+                <td><canvas id="icon2" width="64" height="64"></canvas></td>
+                <td><canvas id="icon3" width="64" height="64"></canvas></td>
        		</tr>
 		</table>
 	</div>
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
 	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="weather.js"></script>
 </body>
 </html>
