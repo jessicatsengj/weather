@@ -50,18 +50,17 @@ citiesContainer.change(function(){
   });
 });
 
-var datesContainer = $('#dates');
-$('.date').css('font-weight', 'bolder').text('day');
+var datesContainer = $('.date');
+  $('#date1').css('font-weight', 'bolder').text('date1');
+  $('#date2').css('font-weight', 'bolder').text('date2');
+  $('#date3').css('font-weight', 'bolder').text('date3');
 
-var temperaturesContainer = $('#temperatures');
-$('.tp').text('temperature');
+var temperaturesContainer = $('temperatureOfDay');
+  $('#tp1').text('temperature1');
+  $('#tp2').text('temperature2');
+  $('#tp3').text('temperature3');
 
-// var temperatureOfDay = new TemperatureOfDay();
 
-//   temperatureOfDay.add("tpToday", 23);
-//   temperatureOfDay.add("tp1", temperature);
-//   temperatureOfDay.add("tp2", temperature);
-//   temperatureOfDay.add("tp3", temperature);
 
 var skycons = new Skycons();
 
