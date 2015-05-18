@@ -7,19 +7,76 @@
 	<meta charset="utf-8">
   	<title>Weather</title>
   	<link rel="stylesheet" type="text/css" href="weather.css">
+  	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
+	<script src="weather.js"></script>
 </head>
 <body>
 	<div class="city">
-		<select id="cities" class="form-control input-lg">
-		</select>
+		<select id="cities" class="form-control input-lg"></select>
+		<script type="text/javascript">
+		var apiServer = 'https://query.yahooapis.com/v1/public/yql';
+		var cities = [ 
+			'臺北市',
+			'新北市',
+			'台中市',
+			'臺南市',
+			'高雄市',
+			'基隆市',
+			'桃園市',
+			'新竹市',
+			'新竹縣',
+			'苗栗縣',
+			'彰化縣',
+			'南投縣',
+			'雲林縣',
+			'嘉義市',
+			'嘉義縣',
+			'屏東縣',
+			'宜蘭縣',
+			'花蓮縣',
+			'台東縣',
+			'澎湖縣',
+			'金門縣',
+			'連江縣',
+		];
+ 
+		var citiesContainer = $('#cities');
+ 
+		// render 'select' tag
+		for (var i in cities) {
+			var city = cities[i];
+			citiesContainer.append('<option value="' + i + '">' + city + '</option>');
+		}
+ 
+		// setup onchange listener
+		citiesContainer.change(function(){
+			var index = $(this).val();
+			var cityName = cities[index];
+			
+			var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
+			$.ajax({
+				url: apiServer,
+				data: {
+					format: 'json',
+					q: queryString,
+				},
+				success: function(data) {
+					console.log(data.query.results);
+				}
+			});
+		});
+	</script>
 	</div>
 	<div>
-		<span class="temperature">23</span>&#8451;
+		<span class="temperature" id="tpToday">23</span>&#8451;
 	</div>
 	<div class="icon">
 		<canvas id="iconToday" width="100" height="100"></canvas>
 	    <div class="condition">
-	        <span class="date">4 May 2015</span>: Mostly Cloudy
+	        <span class="date" id="dateToday" ></span>
 	    </div>
     </div>
 	<div class="content">
@@ -44,10 +101,5 @@
        		</tr>
 		</table>
 	</div>
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="weather.js"></script>
 </body>
 </html>
