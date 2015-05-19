@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<meta charset="utf-8">
-  	<title>Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="  text/css" />
   	<link rel="stylesheet" type="text/css" href="weather.css">
-  	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
-	<script src="weather.js"></script>
+	
+	
 </head>
 <body>
 	<div class="city">
@@ -64,7 +61,11 @@
 					q: queryString,
 				},
 				success: function(data) {
+					if (data.query.results.channel.wind.speed > 10) {
+						skycons.set("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
+					}
 					console.log(data.query.results);
+
 				}
 			});
 		});
@@ -101,5 +102,9 @@
        		</tr>
 		</table>
 	</div>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+	<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
+	<script src="weather.js"></script>
 </body>
 </html>
