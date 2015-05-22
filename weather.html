@@ -41,7 +41,7 @@
 		];
  
 		var citiesContainer = $('#cities');
- 
+ 		
 		// render 'select' tag
 		for (var i in cities) {
 			var city = cities[i];
@@ -61,13 +61,19 @@
 					q: queryString,
 				},
 				success: function(data) {
-					if (data.query.results.channel.wind.speed > 10) {
-						skycons.set("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
-					}
 					console.log(data.query.results);
-
+				 	$('#date1').text(data);
+					$('#date2').text(data);
+					$('#date3').text(data);
+					$('#tp1').text(data);
+					$('#tp2').text(data);
+					$('#tp3').text(data);
+					$('#dateToday').text(data);
 				}
+			
 			});
+
+			
 		});
 	</script>
 	</div>
